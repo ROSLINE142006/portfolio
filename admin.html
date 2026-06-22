@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Rosline Mary J</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="admin-body">
+    <!-- Admin Login Overlay -->
+    <div id="admin-login-overlay" class="admin-login-overlay">
+        <div class="glass-card login-card">
+            <div class="login-header text-center">
+                <i class="fa-solid fa-lock-open login-logo-icon"></i>
+                <h2>Admin Console Login</h2>
+                <p>Enter administrative credential key to manage your portfolio contents.</p>
+            </div>
+            <form id="admin-login-form">
+                <div class="form-group">
+                    <label for="admin-password">Dashboard Access Password</label>
+                    <div class="password-input-wrapper">
+                        <input type="password" id="admin-password" placeholder="••••••••" required>
+                        <button type="button" id="toggle-password-vis" class="password-vis-btn">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">
+                    <span>Unlock Console</span>
+                    <i class="fa-solid fa-key"></i>
+                </button>
+                <div id="login-error" class="form-error hidden text-center">Invalid admin credentials. Please try again.</div>
+            </form>
+            <div class="login-footer text-center">
+                <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left-long"></i> Back to Public Site</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Console Dashboard -->
+    <div id="admin-console" class="admin-console hidden">
+        <!-- Sidebar Navigation -->
+        <aside class="admin-sidebar">
+            <div class="sidebar-brand">
+                <span class="logo-accent">&lt;</span>Admin<span class="logo-accent">.Console /&gt;</span>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <button class="sidebar-tab-btn active" data-tab="overview">
+                            <i class="fa-solid fa-chart-line"></i>
+                            <span>Overview</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="sidebar-tab-btn" data-tab="projects">
+                            <i class="fa-solid fa-list-check"></i>
+                            <span>Manage Projects</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="sidebar-tab-btn" data-tab="credentials">
+                            <i class="fa-solid fa-certificate"></i>
+                            <span>Manage Credentials</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="sidebar-tab-btn" data-tab="visitors">
+                            <i class="fa-solid fa-users"></i>
+                            <span>Visitor logs</span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="admin-info">
+                    <i class="fa-solid fa-circle-user avatar-placeholder"></i>
+                    <div class="admin-meta">
+                        <strong>Rosline Mary J</strong>
+                        <span>Administrator</span>
+                    </div>
+                </div>
+                <button id="admin-logout-btn" class="btn btn-logout w-100">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Lock Console</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Dashboard Viewport -->
+        <main class="admin-main">
+            <!-- Header Bar -->
+            <header class="admin-header">
+                <div class="admin-header-title">
+                    <h1 id="tab-title">Dashboard Overview</h1>
+                    <p id="tab-subtitle">Welcome back, Admin! Here is a summary of your website metrics.</p>
+                </div>
+                <div class="admin-header-actions">
+                    <a href="index.html" target="_blank" class="btn btn-secondary">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        <span>View Live Site</span>
+                    </a>
+                </div>
+            </header>
+
+            <!-- Tab: Overview -->
+            <div id="tab-content-overview" class="tab-content active">
+                <div class="metrics-grid">
+                    <div class="metric-card glass-card">
+                        <div class="metric-icon val-views"><i class="fa-solid fa-eye"></i></div>
+                        <div class="metric-data">
+                            <h3 id="stat-views">0</h3>
+                            <p>Total Page Visits</p>
+                        </div>
+                    </div>
+                    <div class="metric-card glass-card">
+                        <div class="metric-icon val-projects"><i class="fa-solid fa-laptop-code"></i></div>
+                        <div class="metric-data">
+                            <h3 id="stat-projects">0</h3>
+                            <p>Active Projects</p>
+                        </div>
+                    </div>
+                    <div class="metric-card glass-card">
+                        <div class="metric-icon val-certs"><i class="fa-solid fa-award"></i></div>
+                        <div class="metric-data">
+                            <h3 id="stat-certs">0</h3>
+                            <p>Certificates & Achievements</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-widgets-grid">
+                    <div class="widget-card glass-card">
+                        <h3>Quick Project Publisher</h3>
+                        <p class="widget-desc">Fast-publish a new work description immediately on the home page.</p>
+                        <button class="btn btn-primary" onclick="switchTab('projects', true)">
+                            <i class="fa-solid fa-plus"></i>
+                            <span>Create Project Entry</span>
+                        </button>
+                    </div>
+                    
+                    <div class="widget-card glass-card">
+                        <h3>System Information</h3>
+                        <table class="sys-info-table">
+                            <tr>
+                                <td>Environment</td>
+                                <td><span class="badge badge-sys">Client-side LocalStorage</span></td>
+                            </tr>
+                            <tr>
+                                <td>Engine / Stack</td>
+                                <td>Vanilla HTML5, CSS3, JS</td>
+                            </tr>
+                            <tr>
+                                <td>Authentication Mode</td>
+                                <td>Client passcode validation</td>
+                            </tr>
+                            <tr>
+                                <td>Data Integrity Status</td>
+                                <td><span class="badge badge-success"><i class="fa-solid fa-circle-check"></i> Healthy</span></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab: Projects CRUD -->
+            <div id="tab-content-projects" class="tab-content">
+                <div class="crud-split-layout">
+                    <!-- Left: Form to Add/Edit Project -->
+                    <div class="crud-form-column glass-card">
+                        <h3 id="project-form-title">Add New Project</h3>
+                        <form id="project-crud-form">
+                            <input type="hidden" id="project-id">
+                            
+                            <div class="form-group">
+                                <label for="proj-title">Project Title</label>
+                                <input type="text" id="proj-title" required placeholder="e.g. Marriage Hall Booking System">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="proj-category">Category</label>
+                                <select id="proj-category" required>
+                                    <option value="frontend">Frontend</option>
+                                    <option value="backend">Backend/APIs</option>
+                                    <option value="fullstack">Full-Stack</option>
+                                    <option value="database">Database-Focused</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="proj-desc">Description</label>
+                                <textarea id="proj-desc" rows="3" required placeholder="Brief description of the project features, system integrations..."></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="proj-tech">Technologies (Comma-separated)</label>
+                                <input type="text" id="proj-tech" required placeholder="e.g. React.js, ASP.NET Core, SQL Server">
+                            </div>
+
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="proj-github">GitHub Link</label>
+                                    <input type="url" id="proj-github" placeholder="https://github.com/...">
+                                </div>
+                                <div class="form-group">
+                                    <label for="proj-live">Live Link</label>
+                                    <input type="url" id="proj-live" placeholder="https://...">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Project Image Banner</label>
+                                <div class="drag-drop-uploader" id="project-drag-uploader">
+                                    <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+                                    <p class="upload-text">Drag & drop image or <span>Browse</span></p>
+                                    <input type="file" id="proj-image-input" accept="image/*" class="hidden">
+                                </div>
+                                <div id="project-image-preview-box" class="image-preview-container hidden">
+                                    <img id="project-image-preview" src="" alt="Preview">
+                                    <button type="button" class="remove-img-btn" id="remove-project-img"><i class="fa-solid fa-xmark"></i></button>
+                                </div>
+                                <input type="hidden" id="proj-image-base64">
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary" id="btn-project-submit">
+                                    <span>Add Project</span>
+                                </button>
+                                <button type="button" class="btn btn-secondary hidden" id="btn-project-cancel">
+                                    <span>Cancel</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Right: Table List of Projects -->
+                    <div class="crud-list-column glass-card">
+                        <h3>Project List</h3>
+                        <div class="list-search">
+                            <i class="fa-solid fa-magnifying-glass table-search-icon"></i>
+                            <input type="text" id="admin-project-search" placeholder="Search projects...">
+                        </div>
+                        <div class="table-container">
+                            <table class="crud-table">
+                                <thead>
+                                    <tr>
+                                        <th>Project</th>
+                                        <th>Category</th>
+                                        <th>Technologies</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="admin-projects-tbody">
+                                    <!-- Dynamic elements inject here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab: Credentials CRUD -->
+            <div id="tab-content-credentials" class="tab-content">
+                <div class="crud-split-layout">
+                    <!-- Left: Form to Add/Edit Credential -->
+                    <div class="crud-form-column glass-card">
+                        <h3 id="cred-form-title">Add New Credential</h3>
+                        <form id="cred-crud-form">
+                            <input type="hidden" id="cred-id">
+                            
+                            <div class="form-group">
+                                <label for="cred-title">Credential Title / Name</label>
+                                <input type="text" id="cred-title" required placeholder="e.g. Python Programming Specialist">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cred-type">Type</label>
+                                <select id="cred-type" required>
+                                    <option value="certification">Certification</option>
+                                    <option value="achievement">Achievement</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="cred-issuer">Issuing Organization / Summary</label>
+                                <input type="text" id="cred-issuer" required placeholder="e.g. Coursera, HackerRank, Don Bosco College">
+                            </div>
+                            
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="cred-date">Issue Date</label>
+                                    <input type="text" id="cred-date" required placeholder="e.g. May 2026">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cred-link">Verification Link (Optional)</label>
+                                    <input type="url" id="cred-link" placeholder="https://...">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Verification Image / Badge</label>
+                                <div class="drag-drop-uploader" id="cred-drag-uploader">
+                                    <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+                                    <p class="upload-text">Drag & drop image or <span>Browse</span></p>
+                                    <input type="file" id="cred-image-input" accept="image/*" class="hidden">
+                                </div>
+                                <div id="cred-image-preview-box" class="image-preview-container hidden">
+                                    <img id="cred-image-preview" src="" alt="Preview">
+                                    <button type="button" class="remove-img-btn" id="remove-cred-img"><i class="fa-solid fa-xmark"></i></button>
+                                </div>
+                                <input type="hidden" id="cred-image-base64">
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary" id="btn-cred-submit">
+                                    <span>Add Credential</span>
+                                </button>
+                                <button type="button" class="btn btn-secondary hidden" id="btn-cred-cancel">
+                                    <span>Cancel</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Right: Table List of Credentials -->
+                    <div class="crud-list-column glass-card">
+                        <h3>Credentials List</h3>
+                        <div class="list-search">
+                            <i class="fa-solid fa-magnifying-glass table-search-icon"></i>
+                            <input type="text" id="admin-cred-search" placeholder="Search credentials...">
+                        </div>
+                        <div class="table-container">
+                            <table class="crud-table">
+                                <thead>
+                                    <tr>
+                                        <th>Credential</th>
+                                        <th>Type</th>
+                                        <th>Issuer / Date</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="admin-creds-tbody">
+                                    <!-- Dynamic elements inject here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab: Visitors Log -->
+            <div id="tab-content-visitors" class="tab-content">
+                <div class="glass-card">
+                    <div class="table-actions-header">
+                        <h3>Detailed Traffic Logs</h3>
+                        <button id="clear-logs-btn" class="btn btn-danger">
+                            <i class="fa-solid fa-trash-can"></i>
+                            <span>Clear Access Logs</span>
+                        </button>
+                    </div>
+                    <p class="logs-description">Below are records of user visits detected. (Simulated tracking parameters in LocalStorage environment).</p>
+                    
+                    <div class="table-container">
+                        <table class="crud-table logs-table">
+                            <thead>
+                                <tr>
+                                    <th>Timestamp</th>
+                                    <th>Referrer</th>
+                                    <th>Platform</th>
+                                    <th>Page View Route</th>
+                                </tr>
+                            </thead>
+                            <tbody id="visitor-logs-tbody">
+                                <!-- Logs will dynamically render here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast-notification" class="toast-notification hidden"></div>
+
+    <!-- Admin Logic JavaScript -->
+    <script src="admin.js"></script>
+</body>
+</html>
