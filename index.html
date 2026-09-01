@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rosline mary J | Full Stack Web Developer</title>
+    <!-- Meta SEO -->
+    <meta name="description"
+        content="Portfolio of Rosline mary J, a Full Stack Web Developer specializing in React.js, ASP.NET Core Web API, SQL Server, Python, and MySQL.">
+    <meta name="keywords"
+        content="Rosline mary J, Portfolio, Developer, Python, MySQL, Full-Stack, React, ASP.NET Core, BCA, Don Bosco College, Vercel, Kiro">
+    <meta name="author" content="Rosline mary J">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Interactive background graphics -->
+    <div id="cursor-glow" class="cursor-glow"></div>
+    <div id="bg-particles" class="bg-particles"></div>
+
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress"></div>
+
+    <!-- Navigation Header -->
+    <header class="header">
+        <div class="container navbar-container">
+            <a href="#" class="logo">
+                <span class="logo-accent">&lt;</span>Rosline<span class="logo-accent">.Mary /&gt;</span>
+            </a>
+
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#certifications" class="nav-link">Credentials</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon moon-icon"></i>
+                    <i class="fa-solid fa-sun sun-icon"></i>
+                </button>
+
+                <!-- Admin Dashboard Quick Link -->
+                <a href="admin.html" class="admin-link-btn" title="Admin Dashboard">
+                    <i class="fa-solid fa-user-gear"></i>
+                </a>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section fade-in-section">
+            <div class="hero-bg-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+
+            <!-- 3D Floating Geometric Background Elements -->
+            <div class="floating-geometrics">
+                <div class="geo-shape geo-circle-1 parallax-shape" data-speed="1.5"></div>
+                <div class="geo-shape geo-square-1 parallax-shape" data-speed="-1"></div>
+                <div class="geo-shape geo-triangle-1 parallax-shape" data-speed="2"></div>
+                <div class="geo-shape geo-circle-2 parallax-shape" data-speed="-2"></div>
+                <div class="geo-shape wireframe-bracket-left parallax-shape" data-speed="0.8">&#123;</div>
+                <div class="geo-shape wireframe-bracket-right parallax-shape" data-speed="-0.8">&#125;</div>
+                <div class="geo-shape wireframe-slash parallax-shape" data-speed="1.2">&lt;/&gt;</div>
+            </div>
+
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="badge hero-badge">Full Stack Web Developer</div>
+                    <h1 class="hero-title">
+                        Hi, I'm <span class="name-gradient">Rosline mary J</span>
+                    </h1>
+                    <h2 class="hero-subtitle">
+                        I am a <span id="typing-text"></span><span class="cursor">|</span>
+                    </h2>
+                    <p class="hero-description">
+                        Dedicated Full Stack Web Developer pursuing a Bachelor of Computer Application. Experienced in
+                        React.js, ASP.NET Core Web API, SQL Server, and Python.
+                    </p>
+                    <div class="hero-ctas">
+                        <a href="#projects" class="btn btn-primary">
+                            <span>View Projects</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <button onclick="window.print()" class="btn btn-secondary">
+                            <span>Resume</span>
+                            <i class="fa-solid fa-download"></i>
+                        </button>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/rosline-mary" target="_blank" rel="noopener"
+                            class="social-icon" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="mailto:roslinemaryj3@gmail.com" class="social-icon" aria-label="Email">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                        <a href="tel:+919629718432" class="social-icon" aria-label="Phone">
+                            <i class="fa-solid fa-phone"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-image-container">
+                    <div class="hero-image-wrapper">
+                        <!-- Abstract Developer Illustration/Logo -->
+                        <div class="dev-avatar-graphic">
+                            <div class="avatar-glow"></div>
+                            <div class="avatar-orbit-ring ring-1"></div>
+                            <div class="avatar-orbit-ring ring-2"></div>
+                            <div class="avatar-circle">
+                                <img src="rosi-image.jpeg" alt="Rosline Mary J" class="avatar-img">
+                                <div class="floating-tech html-tech parallax-shape" data-speed="1.2"><i
+                                        class="fa-brands fa-html5"></i></div>
+                                <div class="floating-tech py-tech parallax-shape" data-speed="-1.5"><i
+                                        class="fa-brands fa-python"></i></div>
+                                <div class="floating-tech db-tech parallax-shape" data-speed="2"><i
+                                        class="fa-solid fa-database"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll-indicator">
+                <a href="#about" aria-label="Scroll down">
+                    <span>Scroll Down</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section section-padding fade-in-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag">About Me</span>
+                    <h2 class="section-title">My Journey & Background</h2>
+                    <div class="underline"></div>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-image-card glass-card">
+                        <div class="about-image-wrapper">
+                            <img src="rosi-image.jpeg" alt="Rosline Mary J" class="about-img-full">
+                            <div class="about-image-glow"></div>
+                        </div>
+                    </div>
+                    <div class="about-info-card glass-card">
+                        <h3 class="about-subtitle">Who I Am</h3>
+                        <p>
+                            I am a passionate **Full Stack Web Developer** pursuing my **Bachelor of Computer
+                            Application** at Don Bosco College (Co-ed), Yelagiri Hills (affiliated with Thiruvalluvar
+                            University).
+                        </p>
+                        <p>
+                            I specialize in full-stack development using React.js, ASP.NET Core Web API, SQL Server, and
+                            PHP/MySQL. I enjoy building complete web applications, writing secure databases, and
+                            developing clean user interfaces.
+                        </p>
+
+                        <div class="languages-box">
+                            <h4 class="small-title">Languages Known:</h4>
+                            <div class="lang-tags">
+                                <span class="badge lang-badge"><i class="fa-solid fa-language"></i> Tamil
+                                    (Native)</span>
+                                <span class="badge lang-badge"><i class="fa-solid fa-language"></i> English
+                                    (Professional)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-details-card glass-card">
+                        <h3 class="about-subtitle">Education Details</h3>
+                        <div class="timeline-compact">
+                            <div class="timeline-compact-item">
+                                <div class="t-bullet"></div>
+                                <div class="t-content">
+                                    <span class="t-date">2023 - 2026</span>
+                                    <h4 class="t-title">Bachelor of Computer Application</h4>
+                                    <p class="t-subtitle">Don Bosco College (Co-ed), Yelagiri Hills</p>
+                                    <p class="t-desc">Thiruvalluvar University. Duration: June 19, 2023 - May 12, 2026.
+                                        Academic Performance: 86%.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section section-padding fade-in-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag">Capabilities</span>
+                    <h2 class="section-title">Technical Expertise</h2>
+                    <div class="underline"></div>
+                </div>
+
+                <div class="skills-grid">
+                    <!-- Languages & Core Concepts -->
+                    <div class="skills-card glass-card">
+                        <div class="card-icon"><i class="fa-solid fa-code"></i></div>
+                        <h3>Languages & Core Concepts</h3>
+                        <ul class="skills-list">
+                            <li>
+                                <div class="skill-name">Python</div>
+                                <div class="skill-progress-bar">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="skill-name">HTML & CSS</div>
+                                <div class="skill-progress-bar">
+                                    <div class="skill-progress" style="width: 90%"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="skill-name">Cloud Computing</div>
+                                <div class="skill-progress-bar">
+                                    <div class="skill-progress" style="width: 80%"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="skill-name">Artificial Intelligence (Basics)</div>
+                                <div class="skill-progress-bar">
+                                    <div class="skill-progress" style="width: 75%"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Databases & Frameworks -->
+                    <div class="skills-card glass-card">
+                        <div class="card-icon"><i class="fa-solid fa-database"></i></div>
+                        <h3>Databases & Frameworks</h3>
+                        <ul class="skills-list">
+                            <li>
+                                <div class="skill-name">MySQL</div>
+                                <div class="skill-progress-bar">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="skill-name">SQL Server</div>
+                                <div class="skill-progress-bar">
+                                    <div class="skill-progress" style="width: 80%"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="skill-name">Entity Framework</div>
+                                <div class="skill-progress-bar">
+                                    <div class="skill-progress" style="width: 75%"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="skill-name">React.js & ASP.NET Core</div>
+                                <div class="skill-progress-bar">
+                                    <div class="skill-progress" style="width: 80%"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Tools & Platforms -->
+                    <div class="skills-card glass-card">
+                        <div class="card-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                        <h3>Tools & Platforms</h3>
+                        <ul class="skills-list">
+                            <li>
+                                <div class="skill-name">Visual Studio Code (VS Code)</div>
+                                <div class="skill-progress-bar">
+                                    <div class="skill-progress" style="width: 90%"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="skill-name">GitHub (Version Control)</div>
+                                <div class="skill-progress-bar">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="skill-name">Kiro & Vercel</div>
+                                <div class="skill-progress-bar">
+                                    <div class="skill-progress" style="width: 80%"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="skill-name">Postman (API Testing)</div>
+                                <div class="skill-progress-bar">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="experience-section section-padding fade-in-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag">Work History</span>
+                    <h2 class="section-title">Internships & Professional Growth</h2>
+                    <div class="underline"></div>
+                </div>
+
+                <div class="experience-timeline">
+                    <div class="timeline-item glass-card">
+                        <div class="timeline-icon">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <span class="timeline-duration">12/05/2025 – 30/05/2025</span>
+                            <h3 class="role-title">Student | Full Stack Web Developer</h3>
+                            <h4 class="company-name">Sankarpuram, Kallakurichi</h4>
+                            <p class="experience-summary">
+                                Worked on Full Stack Web Development using React.js, ASP.NET Core Web API, and SQL
+                                Server.
+                            </p>
+                            <ul class="experience-points">
+                                <li>Developed a web application with frontend, backend, and database integration.</li>
+                                <li>Implemented CRUD operations for efficient data management and system functionality.
+                                </li>
+                                <li>Used Entity Framework for database connectivity and handling database operations.
+                                </li>
+                                <li>Tested APIs using Postman to ensure proper functionality and performance.</li>
+                                <li>Managed source code and version control using GitHub.</li>
+                                <li>Gained practical knowledge of the Software Development Life Cycle (SDLC).</li>
+                                <li>Improved skills in debugging, testing, problem-solving, and teamwork.</li>
+                                <li>Learned secure data handling and backend API integration techniques.</li>
+                            </ul>
+                            <div class="timeline-tech-tags">
+                                <span class="badge tech-badge">React.js</span>
+                                <span class="badge tech-badge">ASP.NET Core</span>
+                                <span class="badge tech-badge">Web API</span>
+                                <span class="badge tech-badge">SQL Server</span>
+                                <span class="badge tech-badge">Entity Framework</span>
+                                <span class="badge tech-badge">Postman</span>
+                                <span class="badge tech-badge">GitHub</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section section-padding fade-in-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag">Portfolio Showcase</span>
+                    <h2 class="section-title">Featured Projects</h2>
+                    <div class="underline"></div>
+                </div>
+
+                <!-- Search and Filter Panel -->
+                <div class="filter-panel glass-card">
+                    <div class="search-box">
+                        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                        <input type="text" id="project-search"
+                            placeholder="Search projects by name, description, or technology...">
+                    </div>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="frontend">Frontend</button>
+                        <button class="filter-btn" data-filter="backend">Backend/APIs</button>
+                        <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
+                        <button class="filter-btn" data-filter="database">Database-Focused</button>
+                    </div>
+                </div>
+
+                <!-- Projects Grid (Loaded Dynamically via app.js) -->
+                <div class="projects-grid" id="projects-grid">
+                    <!-- Dynamic cards inject here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications & Achievements Section -->
+        <section id="certifications" class="credentials-section section-padding fade-in-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag">Milestones</span>
+                    <h2 class="section-title">Certifications & Achievements</h2>
+                    <div class="underline"></div>
+                </div>
+
+                <!-- Credentials Grid (Loaded Dynamically via app.js) -->
+                <div class="credentials-grid" id="credentials-grid">
+                    <!-- Dynamic cards inject here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section section-padding fade-in-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag">Connect</span>
+                    <h2 class="section-title">Get In Touch</h2>
+                    <div class="underline"></div>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-info-card glass-card">
+                        <h3>Contact Information</h3>
+                        <p>Feel free to reach out to me for internship opportunities, project collaborations, or
+                            technical questions.</p>
+
+                        <div class="info-items">
+                            <div class="info-item">
+                                <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+                                <div class="info-text">
+                                    <span>Email Me</span>
+                                    <a href="mailto:roslinemaryj3@gmail.com">roslinemaryj3@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <div class="info-item">
+                                <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+                                <div class="info-text">
+                                    <span>Call Me</span>
+                                    <a href="tel:+919629718432">+91 9629718432</a>
+                                </div>
+                            </div>
+
+                            <div class="info-item">
+                                <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                                <div class="info-text">
+                                    <span>Location / Address</span>
+                                    <p>MAIYANUR STREET SANKARPURAM TK, KALLAKURICHI DT, VIRIYUR PIN CODE-606 402</p>
+                                </div>
+                            </div>
+
+                            <div class="info-item">
+                                <div class="info-icon"><i class="fa-brands fa-linkedin"></i></div>
+                                <div class="info-text">
+                                    <span>LinkedIn Profile</span>
+                                    <a href="https://linkedin.com/in/rosline-mary" target="_blank"
+                                        rel="noopener">linkedin.com/in/rosline-mary</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-card glass-card">
+                        <h3>Send a Message</h3>
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-group">
+                                <label for="form-name">Name</label>
+                                <input type="text" id="form-name" required placeholder="John Doe">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="form-email">Email</label>
+                                <input type="email" id="form-email" required placeholder="john@example.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="form-message">Message</label>
+                                <textarea id="form-message" rows="5" required
+                                    placeholder="Write your message here..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary w-100">
+                                <span>Send Message</span>
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </form>
+                        <div id="form-feedback" class="form-feedback hidden"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Printable Resume View (Hidden on screen, customized layout for printing) -->
+    <div id="printable-resume" class="print-only">
+        <div class="print-header">
+            <h1 class="print-name">Rosline mary J</h1>
+            <p class="print-subtitle">Full Stack Web Developer</p>
+            <div class="print-contact-info">
+                <span><i class="fa-solid fa-phone"></i> +91 9629718432</span> |
+                <span><i class="fa-solid fa-envelope"></i> roslinemaryj3@gmail.com</span> |
+                <span><i class="fa-solid fa-location-dot"></i> MAIYANUR STREET SANKARPURAM TK KALLAKURICHI DT VIRIYUR
+                    PIN CODE-606 402</span>
+            </div>
+            <div class="print-links">
+                <span><i class="fa-brands fa-linkedin"></i> linkedin.com/in/rosline-mary</span> |
+                <span><i class="fa-brands fa-github"></i> github.com/rosline-mary</span>
+            </div>
+        </div>
+
+        <div class="print-section">
+            <h2 class="print-section-title">Education</h2>
+            <div class="print-education-item">
+                <div class="print-edu-header">
+                    <strong>Bachelor of Computer Application</strong>
+                    <span>2023 - 2026</span>
+                </div>
+                <div class="print-school">Don Bosco College (Co-ed), Yelagiri Hills</div>
+                <p class="print-board">Thiruvalluvar University | June 19, 2023 - May 12, 2026 | Percentage: 86%</p>
+            </div>
+        </div>
+
+        <div class="print-section">
+            <h2 class="print-section-title">Internship Experience</h2>
+            <div class="print-experience-item">
+                <div class="print-exp-header">
+                    <strong>Student | Full Stack Web Developer</strong>
+                    <span>12/05/2025 – 30/05/2025</span>
+                </div>
+                <div class="print-company">Sankarpuram, Kallakurichi (Internship Program - Jagan Digitech)</div>
+                <ul class="print-bullets">
+                    <li>Worked on Full Stack Web Development using React.js, ASP.NET Core Web API, and SQL Server.</li>
+                    <li>Developed a web application with frontend, backend, and database integration.</li>
+                    <li>Implemented CRUD operations for efficient data management and system functionality.</li>
+                    <li>Used Entity Framework for database connectivity and handling database operations.</li>
+                    <li>Tested APIs using Postman to ensure proper functionality and performance.</li>
+                    <li>Managed source code and version control using GitHub.</li>
+                    <li>Gained practical knowledge of the Software Development Life Cycle (SDLC).</li>
+                    <li>Improved skills in debugging, testing, problem-solving, and teamwork.</li>
+                    <li>Learned secure data handling and backend API integration techniques.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="print-section">
+            <h2 class="print-section-title">Projects</h2>
+            <div class="print-project-item">
+                <div class="print-proj-header">
+                    <strong>Marriage Hall Booking System</strong>
+                    <span>Frontend: HTML, CSS, JS | Backend: PHP, MySQL</span>
+                </div>
+                <p>Developed a web-based Marriage Hall Booking System to enable online hall availability checking and
+                    reservation management. Designed an admin panel for managing halls, customers, and booking records
+                    efficiently. Integrated MySQL database for secure data storage and seamless backend connectivity.
+                    Enhanced skills in web development, backend integration, database management, and user-friendly
+                    application design.</p>
+            </div>
+            <div class="print-project-item">
+                <div class="print-proj-header">
+                    <strong>Don Bosco Skill Mission Allocation Management System</strong>
+                    <span>HTML, CSS, JavaScript</span>
+                </div>
+                <p>Built and deployed a web-based management system for Refectory Allocations and Mass Reading
+                    Schedules. Developed Admin Login, Dashboard, allocation management, and schedule publishing
+                    features. Created a responsive and user-friendly interface for administrators and users. Deployed
+                    the application using Vercel.</p>
+            </div>
+            <div class="print-project-item">
+                <div class="print-proj-header">
+                    <strong>Don Bosco Skill Mission (DBSM) Landing Page</strong>
+                    <span>React.js, HTML, CSS, JavaScript</span>
+                </div>
+                <p>Developed a responsive and interactive website for Don Bosco Skill Mission (DBSM) to showcase skill
+                    development programs, courses, campus facilities, and career opportunities. Designed modern course
+                    sections for EV (Electric Vehicle), GSA (Hospitality & Hotel Management), AWS (Cloud Computing), and
+                    DCOM (Data Center Operations). Implemented engaging animations, responsive layouts, interactive
+                    sections, and user-friendly navigation to provide an attractive digital experience. Enhanced skills
+                    in React.js, responsive web design, UI/UX development, component-based architecture, and modern
+                    frontend development.</p>
+            </div>
+        </div>
+
+        <div class="print-section">
+            <h2 class="print-section-title">Skills</h2>
+            <p><strong>Programming Languages:</strong> Python, HTML, CSS, Cloud Computing, Artificial Intelligence
+                (Basics)</p>
+            <p><strong>Tools / Platforms:</strong> Visual Studio Code (VS Code), GitHub, Kiro, Vercel</p>
+            <p><strong>Databases:</strong> MySQL</p>
+        </div>
+
+        <div class="print-section">
+            <h2 class="print-section-title">Certifications</h2>
+            <ul class="print-bullets">
+                <li>Crash Course: Linux For Absolute Beginners - KodeKloud.</li>
+                <li>Object Oriented Programming using Python - Infosys Springboard.</li>
+                <li>Game Development Workshop using Python.</li>
+                <li>Internship Program - Jagan Digitech.</li>
+                <li>OOPs Concepts in C++ - Great Learning Academy.</li>
+                <li>Digital Marketing Course - IBM SkillsBuild.</li>
+                <li>AWS Cloud Quest - AWS.</li>
+                <li>AWS Cloud practitioner Essentials - AWS.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <p class="copyright">&copy; 2026 Rosline Mary J. All Rights Reserved.</p>
+            <!-- Visitor Counter Badge -->
+            <div class="visitor-counter-badge">
+                <i class="fa-solid fa-eye"></i>
+                <span>Visits: <strong id="visitor-count">0</strong></span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- App Script -->
+    <script src="app.js"></script>
+</body>
+
+</html>
