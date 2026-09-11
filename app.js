@@ -6,7 +6,7 @@ const DEFAULT_PROJECTS = [
         id: "proj_1",
         title: "Marriage Hall Booking System",
         category: "fullstack",
-        description: "Developed a web-based Marriage Hall Booking System to simplify online hall reservations. Users can check hall availability, book rooms, and manage reservations. Includes a complete administrator console to manage records, bookings, and customer databases.",
+        description: "Developed a web-based Marriage Hall Booking System to enable online hall availability checking and reservation management. Designed an admin panel for managing halls, customers, and booking records efficiently. Integrated MySQL database for secure data storage and seamless backend connectivity.",
         technologies: "HTML, CSS, JavaScript, PHP, MySQL",
         github: "https://github.com/rosline-mary/marriage-hall-booking",
         live: "",
@@ -14,11 +14,21 @@ const DEFAULT_PROJECTS = [
     },
     {
         id: "proj_2",
-        title: "Full Stack Internship Web App",
-        category: "fullstack",
-        description: "Built during the internship at Jagan Digitech. Consists of a responsive React.js frontend interface integrated with ASP.NET Core Web API endpoints and an underlying SQL Server database, running operations using Entity Framework Core.",
-        technologies: "React.js, ASP.NET Core, Web API, SQL Server, Entity Framework Core",
-        github: "https://github.com/rosline-mary/full-stack-intern-app",
+        title: "Don Bosco Skill Mission Allocation Management System",
+        category: "frontend",
+        description: "Built and deployed a web-based management system for Refectory Allocations and Mass Reading Schedules. Developed Admin Login, Dashboard, allocation management, and schedule publishing features. Created a responsive and user-friendly interface for administrators and users. Deployed the application using Vercel.",
+        technologies: "HTML, CSS, JavaScript",
+        github: "",
+        live: "",
+        image: ""
+    },
+    {
+        id: "proj_3",
+        title: "Don Bosco Skill Mission (DBSM) Landing Page",
+        category: "frontend",
+        description: "Developed a responsive and interactive website for Don Bosco Skill Mission (DBSM) to showcase skill development programs, courses, campus facilities, and career opportunities. Designed modern course sections for EV (Electric Vehicle), GSA (Hospitality & Hotel Management), AWS (Cloud Computing), and DCOM (Data Center Operations). Implemented engaging animations, responsive layouts, interactive sections, and user-friendly navigation to provide an attractive digital experience.",
+        technologies: "React.js, HTML, CSS, JavaScript",
+        github: "",
         live: "",
         image: ""
     }
@@ -27,28 +37,73 @@ const DEFAULT_PROJECTS = [
 const DEFAULT_CERTS = [
     {
         id: "cred_1",
-        title: "Python Programming Essentials",
+        title: "Crash Course: Linux For Absolute Beginners",
         type: "certification",
-        issuer: "Coursera / Python Institute",
-        date: "May 2025",
-        link: "https://coursera.org/verify/python-essentials",
+        issuer: "KodeKloud",
+        date: "Completed",
+        link: "",
         image: ""
     },
     {
         id: "cred_2",
-        title: "Relational Database Management with MySQL",
+        title: "Object Oriented Programming using Python",
         type: "certification",
-        issuer: "Oracle / MySQL Academy",
-        date: "April 2025",
-        link: "https://mysql.com/certification/rdms-mysql",
+        issuer: "Infosys Springboard",
+        date: "Completed",
+        link: "",
         image: ""
     },
     {
         id: "cred_3",
-        title: "Active Core Committee Member",
-        type: "achievement",
-        issuer: "School of Computing, Don Bosco College",
-        date: "2024 - 2025",
+        title: "Game Development Workshop using Python",
+        type: "certification",
+        issuer: "Workshop Organizer",
+        date: "Completed",
+        link: "",
+        image: ""
+    },
+    {
+        id: "cred_4",
+        title: "Internship Program",
+        type: "certification",
+        issuer: "Jagan Digitech",
+        date: "May 2025",
+        link: "",
+        image: ""
+    },
+    {
+        id: "cred_5",
+        title: "OOPs Concepts in C++",
+        type: "certification",
+        issuer: "Great Learning Academy",
+        date: "Completed",
+        link: "",
+        image: ""
+    },
+    {
+        id: "cred_6",
+        title: "Digital Marketing Course",
+        type: "certification",
+        issuer: "IBM SkillsBuild",
+        date: "Completed",
+        link: "",
+        image: ""
+    },
+    {
+        id: "cred_7",
+        title: "AWS Cloud Quest",
+        type: "certification",
+        issuer: "AWS",
+        date: "Completed",
+        link: "",
+        image: ""
+    },
+    {
+        id: "cred_8",
+        title: "AWS Cloud practitioner Essentials",
+        type: "certification",
+        issuer: "AWS",
+        date: "Completed",
         link: "",
         image: ""
     }
@@ -56,6 +111,14 @@ const DEFAULT_CERTS = [
 
 // Document Ready Initialization
 document.addEventListener("DOMContentLoaded", () => {
+    // Force version upgrade of default data if outdated
+    const DB_VERSION = "20260831_v3";
+    if (localStorage.getItem("portfolio_db_version") !== DB_VERSION) {
+        localStorage.setItem("portfolio_projects", JSON.stringify(DEFAULT_PROJECTS));
+        localStorage.setItem("portfolio_certs", JSON.stringify(DEFAULT_CERTS));
+        localStorage.setItem("portfolio_db_version", DB_VERSION);
+    }
+
     initTheme();
     initVisitorStats();
     initTypingEffect();
@@ -64,12 +127,17 @@ document.addEventListener("DOMContentLoaded", () => {
     initCredentialsShowcase();
     initContactForm();
     initMobileMenu();
+    initScrollAnimations();
+    init3DTilt();
+    initCursorGlow();
+    initMouseParallax();
+    initBgParticles();
 });
 
 /* 1. Theme Configuration (Dark / Light Mode) */
 function initTheme() {
     const themeToggle = document.getElementById("theme-toggle");
-    let currentTheme = localStorage.getItem("portfolio_theme") || "dark";
+    let currentTheme = localStorage.getItem("portfolio_theme") || "light";
     
     // Apply current theme
     document.documentElement.setAttribute("data-theme", currentTheme);
@@ -119,7 +187,7 @@ function getBrowserPlatform() {
 
 /* 3. Typing Subtitle Animation */
 function initTypingEffect() {
-    const words = ["Python Developer", "Full Stack Enthusiast", "BCA Student", "Database Specialist"];
+    const words = ["Full Stack Web Developer", "BCA Graduate", "Python Developer", "Database Specialist"];
     const typingSpan = document.getElementById("typing-text");
     let wordIndex = 0;
     let charIndex = 0;
@@ -406,4 +474,151 @@ function initMobileMenu() {
 function capitalizeFirstLetter(string) {
     if (!string) return "";
     return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+/* 9. 3D Card Hover Tilt Effect */
+function init3DTilt() {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    document.addEventListener("mousemove", (e) => {
+        const card = e.target.closest(".glass-card");
+        if (!card) return;
+
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const normalizedX = (x - centerX) / centerX;
+        const normalizedY = (y - centerY) / centerY;
+
+        const maxTilt = 8; // Max degree tilt
+        const rotateY = (normalizedX * maxTilt).toFixed(2);
+        const rotateX = (-normalizedY * maxTilt).toFixed(2);
+
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02) translateY(-6px)`;
+        card.style.boxShadow = `${-normalizedX * 10}px ${-normalizedY * 10}px 32px -10px var(--accent-glow), var(--shadow-md)`;
+        card.style.transition = "transform 0.1s ease, box-shadow 0.1s ease";
+    });
+
+    document.addEventListener("mouseleave", (e) => {
+        const card = e.target.closest(".glass-card");
+        if (!card) return;
+        
+        card.style.transform = "";
+        card.style.boxShadow = "";
+        card.style.transition = "transform 0.5s ease, box-shadow 0.5s ease";
+    }, true);
+}
+
+/* 10. Scroll Entrance Fade-In Animations */
+function initScrollAnimations() {
+    const sections = document.querySelectorAll(".fade-in-section");
+    if (!sections.length) return;
+
+    const observerOptions = {
+        root: null,
+        threshold: 0.08,
+        rootMargin: "0px 0px -40px 0px"
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    sections.forEach(section => {
+        if (section.id === "home") {
+            setTimeout(() => {
+                section.classList.add("is-visible");
+            }, 150);
+        } else {
+            observer.observe(section);
+        }
+    });
+}
+
+/* 11. Cursor Following Glow Interaction */
+function initCursorGlow() {
+    const glow = document.getElementById("cursor-glow");
+    if (!glow) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    document.addEventListener("mousemove", (e) => {
+        glow.style.left = `${e.clientX}px`;
+        glow.style.top = `${e.clientY}px`;
+        
+        if (glow.style.opacity === "0" || glow.style.opacity === "") {
+            glow.style.opacity = "1";
+        }
+    });
+
+    document.addEventListener("mouseleave", () => {
+        glow.style.opacity = "0";
+    });
+}
+
+/* 12. Mouse Parallax for Floating Brackets and Shapes */
+function initMouseParallax() {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const shapes = document.querySelectorAll(".parallax-shape");
+    
+    document.addEventListener("mousemove", (e) => {
+        const x = (window.innerWidth / 2 - e.clientX) / 45;
+        const y = (window.innerHeight / 2 - e.clientY) / 45;
+        
+        shapes.forEach(shape => {
+            const speed = parseFloat(shape.getAttribute("data-speed") || "1");
+            const px = (x * speed).toFixed(2);
+            const py = (y * speed).toFixed(2);
+            shape.style.setProperty("--parallax-x", `${px}px`);
+            shape.style.setProperty("--parallax-y", `${py}px`);
+        });
+    });
+}
+
+/* 13. Dynamic Background Particle Generator */
+function initBgParticles() {
+    const container = document.getElementById("bg-particles");
+    if (!container) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const numParticles = 25;
+    for (let i = 0; i < numParticles; i++) {
+        const particle = document.createElement("div");
+        particle.className = "bg-particle";
+        
+        const size = Math.random() * 5 + 3; // 3px to 8px
+        const posX = Math.random() * 100;
+        const posY = Math.random() * 100;
+        const duration = Math.random() * 20 + 20; // 20s to 40s
+        const delay = Math.random() * -20;
+        
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        particle.style.left = `${posX}%`;
+        particle.style.top = `${posY}%`;
+        particle.style.opacity = (Math.random() * 0.12 + 0.04).toFixed(2);
+        
+        // 90% gold / yellow, 10% secondary accent blue
+        const isBlue = Math.random() < 0.1;
+        if (isBlue) {
+            particle.style.background = "var(--secondary-accent-blue)";
+            particle.style.boxShadow = "0 0 8px var(--secondary-accent-blue)";
+        } else {
+            particle.style.background = "var(--secondary-accent)";
+            particle.style.boxShadow = "0 0 8px var(--secondary-accent)";
+        }
+        
+        particle.style.animation = `float-bg-particle ${duration}s linear infinite`;
+        particle.style.animationDelay = `${delay}s`;
+        
+        container.appendChild(particle);
+    }
 }
